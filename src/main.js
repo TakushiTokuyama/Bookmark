@@ -11,10 +11,10 @@ function createWindow () {
       }
     })
   
-    win.loadFile('view/index.html')
+    win.loadFile('src/view/index.html')
 
     // タスクバー表示画像を設定
-    win.setIcon('img/bookmark.png')
+    win.setIcon('src/img/bookmark.png')
 
     console.log('createWindow');
 
@@ -23,7 +23,7 @@ function createWindow () {
 
 function createTray(){
     // Trayを作成
-    tray = new Tray('img/bookmark.png')
+    tray = new Tray('src/img/bookmark.png')
 
     const contextMenu = Menu.buildFromTemplate([
       { label: 'Item1', type: 'radio' },
