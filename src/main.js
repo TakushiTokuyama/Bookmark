@@ -1,5 +1,10 @@
 const { app, Menu, Tray, BrowserWindow } = require('electron')
 
+// Electron hot-reload
+require('electron-reload')(__dirname, {
+  electron: require('${__dirname}/../../node_modules/electron')
+});
+
 let tray = null
 
 function createWindow () {
