@@ -11,7 +11,7 @@ function createWindow () {
       }
     })
   
-    win.loadFile('src/view/index.html')
+    win.loadFile('src/views/page/index.html')
 
     // タスクバー表示画像を設定
     win.setIcon('src/img/bookmark.png')

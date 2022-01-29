@@ -1,6 +1,6 @@
 module.exports = {
     mode: 'development',
-    entry: './src/app.js',
+    entry: './src/views/app.js',
     output: {
       path: `${__dirname}/dist`,
       filename: 'bundle.js'
