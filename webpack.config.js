@@ -9,7 +9,7 @@ module.exports = {
       rules: [{
         test: /\.js[x]?$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: ['react-hot-loader/webpack', 'babel-loader'],
       }, {
         test: /\.css$/,
         use: ['style-loader', {loader: 'css-loader'}],
@@ -17,7 +17,7 @@ module.exports = {
     },
     target: 'node',
     resolve: {
-      extensions: [".js", ".jsx"]
+      extensions: [".js", ".jsx"],
     },
-    devtool: 'cheap-module-source-map'
+    devtool: 'cheap-module-source-map',
   }
