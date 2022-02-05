@@ -39,7 +39,13 @@ class Content extends React.Component {
     }
 
     doSubmit = (e) => {
+        // defaultの動作をキャンセルする
         e.preventDefault();
+
+        if (this.state.name === "" && this.state.url === "") {
+            return;
+        }
+
         this.setState({
             list: [
                 ...this.state.list,
@@ -55,24 +61,24 @@ class Content extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="alert-primary">
-                    <ul className="list-group">
-                        {this.state.list.map((v) => (
-                            <div>
+                <div className="row">
+                    {this.state.list.map((v) => (
+                        <ul className="list-group list-group-horizontal">
+                            <React.Fragment>
                                 <li className="list-group-item">{v.name}</li>
                                 <li className="list-group-item">{v.url}</li>
-                            </div>
-                        ))}
-
-                    </ul>
-                    <div className="row">
-                        <div className="input-group">
-                            <input type="text" className="form-control col-4" name="name" value={this.state.name} placeholder="Name" onChange={this.doChange} />
-                            <input type="text" className="form-control col-4" name="url" value={this.state.url} placeholder="Url" onChange={this.doChange} />
-                        </div>
-                        <button className="btn col-4" onClick={this.doSubmit}>Click</button>
-                    </div>
+                            </React.Fragment>
+                        </ul>
+                    ))}
                 </div>
+                <div className="row">
+                    <div className="input-group">
+                        <input type="text" className="form-control col-4" name="name" value={this.state.name} placeholder="Name" onChange={this.doChange} />
+                        <input type="text" className="form-control col-4" name="url" value={this.state.url} placeholder="Url" onChange={this.doChange} />
+                    </div>
+
+                </div>
+                <button className="btn col-4 btn-primary" onClick={this.doSubmit}>Click</button>
             </div>
         )
     }
